@@ -13,58 +13,48 @@
 
   <!-- Meta -->
   <meta name="description" content="An evening of quiet warmth and timeless company to share the holiday season. Haus25 · Dec 21" />
-  <meta property="og:title" content="Hiver au Maroc" />
-  <meta property="og:description" content="An evening of quiet warmth and timeless company to share the holiday season." />
-  <meta property="og:image" content="IMG_0018.JPG" />
-  <meta property="og:type" content="website" />
 </head>
 
 <body>
-   <!-- Splash -->
-<div id="splash">
-  <div class="splash-content">
-    <div class="moroccan-lantern">
-      <div class="cage"></div>
-      <div class="glow"></div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="content">
+      <h1>Hiver au Maroc</h1>
+      <p class="subtitle">An evening of quiet warmth and timeless company<br>to share the holiday season.</p>
+      <p class="details">Haus25 · 20 décembre</p>
+
+      <form class="rsvp-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <input type="text" id="name" name="Name" placeholder="Nom" required>
+        <input type="email" id="email" name="Email" placeholder="Email" required>
+        <input type="text" id="diet" name="Dietary" placeholder="Restrictions alimentaires / allergies">
+        <select id="alcohol" name="Alcohol">
+          <option value="wine">Vin</option>
+          <option value="mint tea">Thé à la menthe</option>
+          <option value="no alcohol">Sans alcool</option>
+        </select>
+        <button type="submit">Confirmer ma présence</button>
+      </form>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Main site -->
-<section class="hero">
-  <div class="content">
-    <h1>Hiver au Maroc</h1>
-    <p class="subtitle">
-      An evening of quiet warmth and timeless company<br>to share the holiday season.
+  <!-- L’Esprit de la Soirée -->
+  <section class="esprit">
+    <h2>L’Esprit de la Soirée</h2>
+    <p>
+      A celebration of light and stillness — inspired by Marrakech courtyards, 
+      candlelit salons, and the quiet elegance of winter evenings in the desert. 
+      Every detail is imagined to evoke warmth, intimacy, and the timeless rhythm of Moroccan nights.
     </p>
-    <p class="details">Haus25 · 20 décembre</p>
+    <div class="photo-grid">
+      <img src="img1.jpg" alt="Lantern light over mosaic floor">
+      <img src="img2.jpg" alt="Moroccan tiles and brass">
+      <img src="img3.jpg" alt="Warm candlelit table setting">
+      <img src="img4.jpg" alt="Soft fabrics and evening hues">
+    </div>
+  </section>
 
-    <form class="rsvp-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
-      <input type="text" name="Name" placeholder="Nom" required>
-      <input type="email" name="Email" placeholder="Email" required>
-      <input type="text" name="Dietary" placeholder="Restrictions alimentaires / allergies">
-      <select name="Alcohol">
-        <option value="wine">Vin</option>
-        <option value="mint tea">Thé à la menthe</option>
-        <option value="no alcohol">Sans alcool</option>
-      </select>
-      <button type="submit">Confirmer ma présence</button>
-    </form>
-  </div>
-</section>
-
-<script>
-  window.addEventListener('load', () => {
-    const splash = document.getElementById('splash');
-    splash.classList.add('fade-out');
-    setTimeout(() => splash.remove(), 900); // total splash time < 1 s
-  });
-</script>
-
-
-
-
-  <!-- Invitation -->
+  <!-- Invitation Text -->
   <section class="invitation">
     <p>
       A winter evening touched with Moroccan charm — candlelight, spice, and the warmth of friends.
@@ -73,7 +63,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>Hiver au Maroc · Haus25 · 21 décembre</p>
+    <p>Hiver au Maroc · Une soirée privée</p>
     <p>© 2025</p>
   </footer>
 
