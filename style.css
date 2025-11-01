@@ -174,3 +174,43 @@ footer {
   from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
+/* — Splash Screen — */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1.2s ease;
+}
+
+#splash.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-content h1 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #d7c8a2;
+  letter-spacing: 0.15em;
+  text-transform: none;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  opacity: 0;
+  animation: fadeInText 2.5s ease forwards;
+}
+
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 1; }
+}
+
+/* optional: subtle glow like candlelight */
+.splash-content h1 {
+  text-shadow: 0 0 12px rgba(197, 173, 138, 0.2), 0 0 24px rgba(197, 173, 138, 0.08);
+}
