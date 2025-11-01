@@ -20,8 +20,15 @@
 </head>
 
 <body>
-    <div id="splash">
+   <div id="splash">
   <div class="splash-content">
+    <div class="lantern">
+      <div class="lamp-top"></div>
+      <div class="lamp-body">
+        <div class="light"></div>
+      </div>
+      <div class="lamp-bottom"></div>
+    </div>
     <h1>Hiver au Maroc</h1>
   </div>
 </div>
@@ -46,6 +53,17 @@
   </div>
 </section>
 
+<script>
+  window.addEventListener('load', () => {
+    const splash = document.getElementById('splash');
+    setTimeout(() => {
+      splash.classList.add('fade-out');
+      setTimeout(() => splash.remove(), 1200);
+    }, 3400); // Slightly longer to let lamp animation finish
+  });
+</script>
+
+
 
 
 
@@ -61,15 +79,6 @@
     <p>Hiver au Maroc · Haus25 · 21 décembre</p>
     <p>© 2025</p>
   </footer>
-  <script>
-  window.addEventListener('load', () => {
-    const splash = document.getElementById('splash');
-    setTimeout(() => {
-      splash.classList.add('fade-out');
-      setTimeout(() => splash.remove(), 1200);
-    }, 1000); // how long the splash stays visible (2.5s)
-  });
-</script>
 
 </body>
 </html>

@@ -174,7 +174,8 @@ footer {
   from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
-/* — Splash Screen — */
+
+/* — Splash Screen with Moroccan Lamp — */
 #splash {
   position: fixed;
   inset: 0;
@@ -192,16 +193,90 @@ footer {
   pointer-events: none;
 }
 
+.splash-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  animation: fadeInText 2.2s ease forwards;
+}
+
 .splash-content h1 {
   font-family: 'EB Garamond', serif;
   font-weight: 400;
   font-style: normal;
   color: #d7c8a2;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: none;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
   opacity: 0;
-  animation: fadeInText 2.5s ease forwards;
+  animation: fadeInText 2.8s ease 1.4s forwards;
+  text-shadow: 0 0 15px rgba(197, 173, 138, 0.25);
+}
+
+/* Moroccan Lamp */
+.lantern {
+  position: relative;
+  width: 24px;
+  height: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: floatLamp 4s ease-in-out infinite;
+}
+
+.lamp-top {
+  width: 10px;
+  height: 10px;
+  background: #c5ad8a;
+  border-radius: 50% 50% 0 0;
+  position: relative;
+}
+
+.lamp-body {
+  width: 24px;
+  height: 36px;
+  background: rgba(60, 50, 35, 0.6);
+  border: 1px solid rgba(197, 173, 138, 0.5);
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.lamp-body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: linear-gradient(to bottom, rgba(197, 173, 138, 0.25), rgba(0, 0, 0, 0.5));
+  opacity: 0.3;
+}
+
+.light {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 220, 160, 0.9), rgba(197, 173, 138, 0.1));
+  opacity: 0;
+  animation: lightUp 3s ease forwards;
+}
+
+.lamp-bottom {
+  width: 4px;
+  height: 12px;
+  background: #c5ad8a;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Animations */
+@keyframes lightUp {
+  0% { opacity: 0; box-shadow: 0 0 0 rgba(255, 200, 140, 0); }
+  50% { opacity: 0.8; box-shadow: 0 0 15px rgba(255, 220, 160, 0.5), 0 0 30px rgba(197, 173, 138, 0.2); }
+  100% { opacity: 1; box-shadow: 0 0 25px rgba(255, 220, 160, 0.6), 0 0 45px rgba(197, 173, 138, 0.3); }
 }
 
 @keyframes fadeInText {
@@ -210,7 +285,7 @@ footer {
   100% { opacity: 1; }
 }
 
-/* optional: subtle glow like candlelight */
-.splash-content h1 {
-  text-shadow: 0 0 12px rgba(197, 173, 138, 0.2), 0 0 24px rgba(197, 173, 138, 0.08);
+@keyframes floatLamp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
