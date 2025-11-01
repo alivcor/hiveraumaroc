@@ -22,31 +22,33 @@ body {
 .hero {
   position: relative;
   background: url('IMG_0018.JPG') center center/cover no-repeat;
-  height: 100vh;
+  height: 120vh; /* taller hero for more breathing room */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
 }
 
+/* Dark vertical gradient blur */
 .hero::before {
   content: "";
   position: absolute;
-  inset: -1px; /* bleed margin */
+  inset: -1px;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.4) 0%,
-    rgba(0, 0, 0, 0.6) 40%,
-    rgba(0, 0, 0, 0.85) 85%,
-    rgba(0, 0, 0, 0.95) 100%
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 25%,
+    rgba(0, 0, 0, 0.8) 55%,
+    rgba(0, 0, 0, 0.95) 85%,
+    rgba(0, 0, 0, 1) 100%
   );
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   filter: brightness(0.95);
   z-index: 1;
+  pointer-events: none;
 }
-
-
 
 .hero .content {
   position: relative;
@@ -54,7 +56,7 @@ body {
   animation: fadeIn 2.5s ease;
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 6rem 1.5rem 5rem; /* more vertical spacing inside */
 }
 
 .hero h1 {
@@ -63,8 +65,8 @@ body {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  margin-bottom: 0.8rem;
+  font-size: clamp(1.5rem, 4vw, 2.3rem);
+  margin-bottom: 1.4rem;
   color: #f3eee6;
 }
 
@@ -72,7 +74,7 @@ body {
   font-style: italic;
   font-size: clamp(0.9rem, 2vw, 1.05rem);
   color: rgba(235, 224, 208, 0.9);
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
 .details {
@@ -83,16 +85,16 @@ body {
 
 /* Floating RSVP Form */
 .rsvp-form {
-  margin-top: 2.8rem;
+  margin-top: 3.8rem; /* pushes form further below title */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 10, 0.55);
+  backdrop-filter: blur(14px);
   border: 1px solid rgba(197, 173, 138, 0.25);
-  border-radius: 10px;
-  padding: 1.6rem 2rem;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
   width: min(90%, 480px);
   margin-left: auto;
   margin-right: auto;
@@ -103,7 +105,7 @@ body {
 .rsvp-form input,
 .rsvp-form select {
   width: 100%;
-  padding: 0.7rem 1rem;
+  padding: 0.8rem 1rem;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
@@ -123,20 +125,20 @@ body {
 }
 
 .rsvp-form button {
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.9rem;
   background: none;
   border: 1px solid rgba(197, 173, 138, 0.6);
   color: #c5ad8a;
   font-family: 'EB Garamond', serif;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   font-size: 0.95rem;
   text-transform: uppercase;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
@@ -147,9 +149,9 @@ body {
 
 /* Invitation */
 .invitation {
-  background: #111;
-  color: rgba(230, 223, 210, 0.9);
-  padding: 5rem 1.5rem;
+  background: #0a0a0a;
+  color: rgba(230, 223, 210, 0.85);
+  padding: 6rem 1.5rem 7rem;
   text-align: center;
   font-family: 'EB Garamond', serif;
   font-style: italic;
@@ -162,14 +164,14 @@ body {
 footer {
   background-color: #0a0a0a;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
   font-size: 0.85rem;
-  color: rgba(193, 181, 161, 0.75);
+  color: rgba(193, 181, 161, 0.7);
   letter-spacing: 0.05em;
 }
 
 /* Animation */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(18px); }
+  from { opacity: 0; transform: translateY(25px); }
   to { opacity: 1; transform: translateY(0); }
 }
