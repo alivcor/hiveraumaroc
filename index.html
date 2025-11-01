@@ -47,10 +47,10 @@
       Every detail is imagined to evoke warmth, intimacy, and the timeless rhythm of Moroccan nights.
     </p>
     <div class="photo-grid">
-      <img src="img1.jpg" alt="Lantern light over mosaic floor">
-      <img src="img2.jpg" alt="Moroccan tiles and brass">
-      <img src="img3.jpg" alt="Warm candlelit table setting">
-      <img src="img4.jpg" alt="Soft fabrics and evening hues">
+      <img src="img1.jpg" alt="Lantern light over mosaic floor" class="fade-in">
+    <img src="img2.jpg" alt="Moroccan tiles and brass" class="fade-in">
+    <img src="img3.jpg" alt="Warm candlelit table setting" class="fade-in">
+    <img src="img4.jpg" alt="Soft fabrics and evening hues" class="fade-in">
     </div>
   </section>
 
@@ -66,6 +66,23 @@
     <p>Hiver au Maroc · Une soirée privée</p>
     <p>© 2025</p>
   </footer>
+<script>
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  // Select elements that should fade in
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
