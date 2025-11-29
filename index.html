@@ -23,16 +23,18 @@
       <p class="subtitle">An evening of quiet warmth and timeless company<br>to share the holiday season.</p>
       <p class="details">Haus25 · 20 décembre</p>
 
-      <form class="rsvp-form" action="mailto:youremail@example.com" method="post" enctype="text/plain">
-        <input type="text" id="name" name="Name" placeholder="Nom" required>
-        <input type="email" id="email" name="Email" placeholder="Email" required>
-        <input type="text" id="diet" name="Dietary" placeholder="Restrictions alimentaires / allergies">
-        <select id="alcohol" name="Alcohol">
-          <option value="wine">Vin</option>
-          <option value="mint tea">Thé à la menthe</option>
-          <option value="no alcohol">Sans alcool</option>
+      <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse" method="POST">
+        <input type="text" id="name" name="entry.475222622" placeholder="Nom" required>
+        <input type="email" id="email" name="emailAddress" placeholder="Email" required>
+        <input type="text" id="diet" name="entry.769366512" placeholder="Restrictions alimentaires / allergies">
+        <select id="alcohol" name="entry.1714906199">
+          <option value="Vin">Vin</option>
+          <option value="Thé à la menthe">Thé à la menthe</option>
+          <option value="Sans alcool">Sans alcool</option>
         </select>
+        <input type="hidden" name="emailReceipt" value="true">
         <button type="submit">Confirmer ma présence</button>
+        <p class="form-status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -41,7 +43,7 @@
   <section class="esprit">
   <h2>L’Esprit de la Soirée</h2>
   <p>
-    A celebration of light and stillness — inspired by Marrakech courtyards, 
+    A celebration of light and stillness, inspired by Marrakech courtyards, 
     candlelit salons, and the quiet elegance of winter evenings in the desert. 
     Every detail is imagined to evoke warmth, intimacy, and the timeless rhythm of Moroccan nights.
   </p>
@@ -61,7 +63,7 @@
 
   <section class="invitation">
     <p>
-      A winter evening touched with Moroccan charm — candlelight, spice, and the warmth of friends.
+      A winter evening touched with Moroccan charm - candlelight, spice, and the warmth of friends.
     </p>
   </section>
 
@@ -86,6 +88,37 @@
 
   // Select elements that should fade in
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Google Form submission (no page reload)
+  const rsvpForm = document.getElementById('rsvp-form');
+  const statusEl = document.querySelector('.form-status');
+  const googleAction = 'https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse';
+
+  if (rsvpForm) {
+    rsvpForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      statusEl.textContent = 'Envoi en cours...';
+
+      const formData = new FormData(rsvpForm);
+      formData.append('fvv', '1');
+      formData.append('draftResponse', '[]');
+      formData.append('pageHistory', '0');
+      formData.append('fbzx', Date.now().toString());
+
+      try {
+        await fetch(googleAction, {
+          method: 'POST',
+          mode: 'no-cors',
+          body: formData,
+        });
+        statusEl.textContent = 'Votre réponse a bien été enregistrée. Hâte de partager cette soirée avec vous.';
+        rsvpForm.reset();
+      } catch (error) {
+        statusEl.textContent = 'Une petite erreur est survenue. Merci de réessayer dans un instant.';
+      }
+    });
+  }
 </script>
 </body>
 </html>
