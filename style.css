@@ -212,30 +212,6 @@ body {
   overflow: hidden;
 }
 
-.etiquette::before,
-.etiquette::after {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  border: 1px solid rgba(197, 173, 138, 0.25);
-  border-radius: 12px;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.etiquette::before {
-  top: -40px;
-  left: -50px;
-  transform: rotate(3deg);
-}
-
-.etiquette::after {
-  bottom: -50px;
-  right: -40px;
-  transform: rotate(-2deg);
-}
-
 .etiquette-title {
   color: rgba(197, 173, 138, 0.8);
   letter-spacing: 0.08em;
