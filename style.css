@@ -194,6 +194,18 @@ body {
   font-style: normal;
 }
 
+.note {
+  margin-top: 0.8rem;
+  color: rgba(235, 224, 208, 0.7);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.note.en {
+  color: rgba(235, 224, 208, 0.6);
+  font-style: normal;
+}
+
 .form-status {
   min-height: 1.5rem;
   color: #c5ad8a;
