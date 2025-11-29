@@ -14,7 +14,7 @@
   <!-- Meta -->
   <meta name="description" content="An evening of quiet warmth and timeless company to share the holiday season. Haus25 · Dec 21" />
 </head>
-<body>
+<body data-lang="fr">
 
  
   <section class="hero">
@@ -38,10 +38,13 @@
         <button type="submit">Confirmer ma présence</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
-      <p class="dress-code">Code vestimentaire : maron, exclusivement. Merci de ne porter aucune autre couleur.</p>
-      <p class="dress-code en">We kindly ask guests to wear maroon only, for a perfectly harmonious evening. Your adherence will set the evening beautifully.</p>
-      <p class="note">Bien que nous adorions les petits, nous vous prions de faire de cette soirée un moment entre adultes.</p>
-      <p class="note en">While we adore little ones, we would be grateful to keep this evening adults-only.</p>
+      <div class="etiquette">
+        <p class="etiquette-title">Étiquette</p>
+        <p class="etiquette-line fr">Code vestimentaire : maron, exclusivement. Merci de ne porter aucune autre couleur.</p>
+        <p class="etiquette-line en">Maroon attire only; thank you for honouring the palette.</p>
+        <p class="etiquette-line fr">Bien que nous adorions les petits, nous vous prions de garder cette soirée entre adultes.</p>
+        <p class="etiquette-line en">While we adore little ones, we would be grateful to keep this evening adults-only.</p>
+      </div>
     </div>
   </section>
 
@@ -119,6 +122,15 @@
         formSubmitted = false;
       }
     });
+  }
+
+  // Etiquette language toggle with blur
+  const langRoot = document.body;
+  if (langRoot) {
+    setInterval(() => {
+      const current = langRoot.getAttribute('data-lang') === 'fr' ? 'en' : 'fr';
+      langRoot.setAttribute('data-lang', current);
+    }, 4200);
   }
 </script>
 </body>

@@ -113,6 +113,7 @@ body {
   color: rgba(235, 224, 208, 0.8);
   font-size: 1.02rem;
   margin-bottom: 0.5rem;
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
 }
 
 .form-intro.en {
@@ -182,6 +183,10 @@ body {
   color: #0a0a0a;
 }
 
+.rsvp-form + .etiquette {
+  margin-top: 2.5rem;
+}
+
 .dress-code {
   margin-top: 1.6rem;
   color: rgba(197, 173, 138, 0.9);
@@ -194,16 +199,85 @@ body {
   font-style: normal;
 }
 
-.note {
-  margin-top: 0.8rem;
-  color: rgba(235, 224, 208, 0.7);
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+.etiquette {
+  margin-top: 2.5rem;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid rgba(197, 173, 138, 0.35);
+  border-radius: 12px;
+  background: radial-gradient(circle at 30% 30%, rgba(197, 173, 138, 0.09), rgba(10, 10, 10, 0.4));
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  max-width: 620px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.note.en {
+.etiquette::before,
+.etiquette::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border: 1px solid rgba(197, 173, 138, 0.25);
+  border-radius: 12px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.etiquette::before {
+  top: -40px;
+  left: -50px;
+  transform: rotate(3deg);
+}
+
+.etiquette::after {
+  bottom: -50px;
+  right: -40px;
+  transform: rotate(-2deg);
+}
+
+.etiquette-title {
+  color: rgba(197, 173, 138, 0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.etiquette-line {
+  color: rgba(235, 224, 208, 0.7);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
+.etiquette-line.en {
   color: rgba(235, 224, 208, 0.6);
   font-style: normal;
+}
+
+[data-lang="fr"] .etiquette-line.en,
+[data-lang="en"] .etiquette-line.fr,
+[data-lang="fr"] .form-intro.en,
+[data-lang="en"] .form-intro:not(.en) {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(6px);
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+}
+
+[data-lang="fr"] .etiquette-line.fr,
+[data-lang="en"] .etiquette-line.en,
+[data-lang="fr"] .form-intro:not(.en),
+[data-lang="en"] .form-intro.en {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  position: relative;
+  visibility: visible;
 }
 
 .form-status {
