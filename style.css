@@ -233,10 +233,38 @@ body {
   font-style: normal;
 }
 
+.protocol {
+  margin: 2rem auto 0;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(197, 173, 138, 0.35);
+  border-radius: 10px;
+  max-width: 620px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(197, 173, 138, 0.08), rgba(10, 10, 10, 0.55));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.protocol-title {
+  color: rgba(197, 173, 138, 0.85);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  margin-bottom: 0.55rem;
+}
+
+.protocol-line {
+  color: rgba(235, 224, 208, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
 [data-lang="fr"] .etiquette-line.en,
 [data-lang="en"] .etiquette-line.fr,
 [data-lang="fr"] .form-intro.en,
-[data-lang="en"] .form-intro:not(.en) {
+[data-lang="en"] .form-intro:not(.en),
+[data-lang="fr"] .protocol-line.en,
+[data-lang="en"] .protocol-line.fr {
   opacity: 0;
   filter: blur(6px);
   transform: translateY(6px);
@@ -248,7 +276,9 @@ body {
 [data-lang="fr"] .etiquette-line.fr,
 [data-lang="en"] .etiquette-line.en,
 [data-lang="fr"] .form-intro:not(.en),
-[data-lang="en"] .form-intro.en {
+[data-lang="en"] .form-intro.en,
+[data-lang="fr"] .protocol-line.fr,
+[data-lang="en"] .protocol-line.en {
   opacity: 1;
   filter: blur(0);
   transform: translateY(0);
