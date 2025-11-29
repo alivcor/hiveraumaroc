@@ -81,6 +81,17 @@ body {
   margin-bottom: 3.5rem;
 }
 
+.form-intro {
+  color: rgba(235, 224, 208, 0.8);
+  font-size: 1.02rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-intro.en {
+  color: rgba(235, 224, 208, 0.65);
+  font-style: normal;
+}
+
 /* — RSVP Form — */
 .rsvp-form {
   display: flex;
@@ -141,6 +152,18 @@ body {
 .rsvp-form button:hover {
   background: #c5ad8a;
   color: #0a0a0a;
+}
+
+.dress-code {
+  margin-top: 1.6rem;
+  color: rgba(197, 173, 138, 0.9);
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
+}
+
+.dress-code.en {
+  color: rgba(197, 173, 138, 0.75);
+  font-style: normal;
 }
 
 .form-status {
