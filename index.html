@@ -23,7 +23,8 @@
       <p class="subtitle">An evening of quiet warmth and timeless company<br>to share the holiday season.</p>
       <p class="details">Haus25 · 20 décembre</p>
 
-      <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse" method="POST">
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+      <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse" method="POST" target="hidden_iframe">
         <input type="text" id="name" name="entry.475222622" placeholder="Nom" required>
         <input type="email" id="email" name="emailAddress" placeholder="Email" required>
         <input type="text" id="diet" name="entry.769366512" placeholder="Restrictions alimentaires / allergies">
@@ -33,6 +34,11 @@
           <option value="Sans alcool">Sans alcool</option>
         </select>
         <input type="hidden" name="emailReceipt" value="true">
+        <input type="hidden" name="fvv" value="1">
+        <input type="hidden" name="draftResponse" value="[]">
+        <input type="hidden" name="pageHistory" value="0">
+        <input type="hidden" name="fbzx" value="-8517970882854100324">
+        <input type="hidden" name="entry.1714906199_sentinel" value="">
         <button type="submit">Confirmer ma présence</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
@@ -92,30 +98,25 @@
   // Google Form submission (no page reload)
   const rsvpForm = document.getElementById('rsvp-form');
   const statusEl = document.querySelector('.form-status');
-  const googleAction = 'https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse';
+  const hiddenIframe = document.getElementById('hidden_iframe');
+  let formSubmitted = false;
 
   if (rsvpForm) {
-    rsvpForm.addEventListener('submit', async (e) => {
+    rsvpForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       statusEl.textContent = 'Envoi en cours...';
+      formSubmitted = true;
+      rsvpForm.submit();
+    });
+  }
 
-      const formData = new FormData(rsvpForm);
-      formData.append('fvv', '1');
-      formData.append('draftResponse', '[]');
-      formData.append('pageHistory', '0');
-      formData.append('fbzx', Date.now().toString());
-
-      try {
-        await fetch(googleAction, {
-          method: 'POST',
-          mode: 'no-cors',
-          body: formData,
-        });
+  if (hiddenIframe) {
+    hiddenIframe.addEventListener('load', () => {
+      if (formSubmitted) {
         statusEl.textContent = 'Votre réponse a bien été enregistrée. Hâte de partager cette soirée avec vous.';
         rsvpForm.reset();
-      } catch (error) {
-        statusEl.textContent = 'Une petite erreur est survenue. Merci de réessayer dans un instant.';
+        formSubmitted = false;
       }
     });
   }
