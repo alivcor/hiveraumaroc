@@ -24,21 +24,15 @@
       <p class="details">Haus25 · 20 décembre</p>
 
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-      <form class="rsvp-form" id="rsvp-form" action="https://docs.google.com/forms/d/e/1FAIpQLSckkWhNVoeZ-bC0Sc9HT4dqsSZsUpG7SQ8HxPkPb2reLoK1FA/formResponse" method="POST" target="hidden_iframe">
-        <input type="text" id="name" name="entry.475222622" placeholder="Nom" required>
-        <input type="email" id="email" name="emailAddress" placeholder="Email" required>
-        <input type="text" id="diet" name="entry.769366512" placeholder="Restrictions alimentaires / allergies">
-        <select id="alcohol" name="entry.1714906199">
+      <form class="rsvp-form" id="rsvp-form" action="https://script.google.com/macros/s/AKfycbzb6PRVXfPkrV-avhtJxA1kpfMYtS7F9uOElmfAGsIdzg3c5RVcmoMyLm1ZQEimNXos/exec" method="POST" target="hidden_iframe">
+        <input type="text" id="name" name="name" placeholder="Nom" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="text" id="diet" name="diet" placeholder="Restrictions alimentaires / allergies">
+        <select id="alcohol" name="alcohol">
           <option value="Vin">Vin</option>
           <option value="Thé à la menthe">Thé à la menthe</option>
           <option value="Sans alcool">Sans alcool</option>
         </select>
-        <input type="hidden" name="emailReceipt" value="true">
-        <input type="hidden" name="fvv" value="1">
-        <input type="hidden" name="draftResponse" value="[]">
-        <input type="hidden" name="pageHistory" value="0">
-        <input type="hidden" name="fbzx" value="-8517970882854100324">
-        <input type="hidden" name="entry.1714906199_sentinel" value="">
         <button type="submit">Confirmer ma présence</button>
         <p class="form-status" aria-live="polite"></p>
       </form>
@@ -95,7 +89,7 @@
   // Select elements that should fade in
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // Google Form submission (no page reload)
+  // Apps Script sheet submission (no page reload)
   const rsvpForm = document.getElementById('rsvp-form');
   const statusEl = document.querySelector('.form-status');
   const hiddenIframe = document.getElementById('hidden_iframe');
