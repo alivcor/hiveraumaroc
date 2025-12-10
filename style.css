@@ -482,6 +482,56 @@ body {
   line-height: 1.7;
 }
 
+.look-items {
+  display: grid;
+  gap: 1rem;
+  text-align: left;
+  margin-top: 0.6rem;
+}
+
+.look-item {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid rgba(197, 173, 138, 0.25);
+  border-radius: 10px;
+  background: linear-gradient(140deg, rgba(197, 173, 138, 0.06), rgba(15, 10, 10, 0.6));
+}
+
+.look-thumb {
+  border: 1px dashed rgba(197, 173, 138, 0.5);
+  border-radius: 8px;
+  min-height: 90px;
+  display: grid;
+  place-items: center;
+  padding: 0.9rem;
+  color: rgba(235, 224, 208, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.look-meta .look-name {
+  color: #f3eee6;
+  font-size: 1.02rem;
+  margin-bottom: 0.35rem;
+}
+
+.look-desc {
+  color: rgba(235, 224, 208, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .look-item {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* - Invitation - */
 .invitation {
   background: #0a0a0a;
