@@ -21,31 +21,15 @@
       color: var(--ink);
       font-family: 'EB Garamond', Georgia, serif;
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.9;
       -webkit-font-smoothing: antialiased;
       -webkit-text-size-adjust: 100%;
     }
     .note-shell {
-      max-width: 820px;
+      max-width: 980px;
       width: 92%;
       margin: 0 auto;
-      padding: 32px 0 40px;
-    }
-    .card {
-      background: linear-gradient(160deg, var(--card), var(--card2));
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 18px 38px rgba(0,0,0,0.35);
-      padding: 32px 26px 30px;
-    }
-    .badge {
-      display: inline-block;
-      padding: 10px 18px;
-      border: 1px solid rgba(197,173,138,0.4);
-      border-radius: 999px;
-      letter-spacing: 0.12em;
-      font-size: 11px;
-      color: var(--gold);
+      padding: 58px 0 68px;
     }
     h1 {
       margin: 22px 0 10px;
@@ -55,42 +39,42 @@
       color: #f3eee6;
     }
     .subtitle {
-      margin: 0 0 18px;
+      margin: 0 0 24px;
       color: rgba(235,224,208,0.82);
       font-size: 16px;
       letter-spacing: 0.04em;
       font-style: italic;
       text-align: center;
     }
-    p { margin: 0 0 16px; color: rgba(235,224,208,0.86); font-size: 18px; }
+    p { margin: 0 0 20px; color: rgba(235,224,208,0.86); font-size: 18px; }
+    .lede { font-size: 19px; letter-spacing: 0.01em; margin-bottom: 28px; }
     .section-label {
-      margin: 0 0 10px;
+      margin: 24px 0 12px;
       color: var(--gold);
       letter-spacing: 0.06em;
       text-transform: uppercase;
       font-size: 13px;
     }
     .gift-box {
-      background: rgba(25,16,16,0.78);
-      border: 1px solid rgba(197,173,138,0.24);
-      border-radius: 12px;
-      padding: 16px 16px 14px;
+      padding: 6px 0 2px;
       color: rgba(235,224,208,0.86);
-      margin: 0 0 18px;
+      margin: 0 0 10px;
     }
     .gift-list {
       margin: 0;
       padding-left: 18px;
       list-style: disc;
     }
-    .gift-list li { margin: 0 0 14px; padding-left: 4px; font-size: 18px; }
+    .gift-list li { margin: 0 0 18px; padding-left: 4px; font-size: 18px; }
     .gift-list strong { color: var(--ink); }
-    .gift-list span { color: rgba(235,224,208,0.8); font-style: italic; display: block; margin-top: 2px; font-size: 17px; line-height: 1.7; }
+    .gift-list span { color: rgba(235,224,208,0.8); font-style: italic; display: block; margin-top: 6px; font-size: 17px; line-height: 1.7; }
     .gift-list a {
       color: var(--gold);
       text-decoration: none;
       margin-left: 6px;
       font-size: 16px;
+      display: inline-block;
+      margin-top: 6px;
     }
     .menu-link {
       display: inline-block;
@@ -106,9 +90,8 @@
       text-align: center;
     }
     .center { text-align: center; }
-    .closing { color: var(--muted); font-style: italic; margin-top: 20px; }
+    .closing { color: var(--muted); font-style: italic; margin-top: 26px; }
     @media (max-width: 640px) {
-      .card { padding: 30px 22px; }
       h1 { font-size: 26px; }
       body { font-size: 17px; }
       p { font-size: 17px; }
@@ -120,55 +103,50 @@
 </head>
 <body>
   <main class="note-shell">
-    <div class="card">
-      <div class="center">
-        <div class="badge">Hiver au Maroc</div>
-        <h1>Après-soirée</h1>
-        <p class="subtitle">Merci d’avoir prolongé la nuit avec nous.</p>
-      </div>
+    <h1 class="center" style="margin-top:4px;">Après-soirée</h1>
+    <p class="subtitle">Merci d’avoir prolongé la nuit avec nous.</p>
 
-      <p>Thank you for lingering past midnight. We hoped to keep Marrakech alive in candlelight, fleur d’oranger, and dates, 3,600 miles from Morocco.</p>
+    <p class="lede">Thank you for lingering past midnight. We hoped to keep Marrakech alive in candlelight, fleur d’oranger, and dates, 3,600 miles from Morocco.</p>
 
-      <p class="section-label">In your gift bag</p>
-      <div class="gift-box">
-        <ul class="gift-list">
-          <li>
-            <strong>Les Sens de Marrakech</strong> · Savon délicat, crafted in Marrakech with local artisans.
-            <span>Created in 2003 by Céline Musquar Seguin to offer authentic Moroccan products while honoring local artisans. No deceptive packaging, just Moroccan craftsmanship with natural, safe ingredients and a commitment to ethical, truthful savoir-faire.</span>
-            <a href="https://www.lessensdemarrakech.fr/en/">Discover</a>
-          </li>
-          <li>
-            <strong>Tesori d’Oriente</strong> · Hammam Shower Cream with argan oil.
-            <span>An Italian house born to transform small daily gestures into rituals of pure pleasure. This Oriental-inspired aromatic shower cream with argan oil gently cleanses and deeply nourishes, leaving skin soft, silky, and wrapped in a warm, unmistakable fragrance. A sensory treat that renews body and mind, like a journey through golden dunes.</span>
-            <a href="https://www.tesoridoriente.com/en/shower-cream/hammam">Discover</a>
-          </li>
-          <li>
-            <strong>Palais des Thés</strong> · Thé vert à la menthe marocaine.
-            <span>Founded in 1986 by François-Xavier Delmas, this maison de thé brought a fresh voice to a long-established world. Green tea with sweet mint leaves, the ultimate Moroccan mint tea and refined gesture of hospitality across the Arab world.</span>
-            <a href="https://us.palaisdesthes.com/en_us/organic-mint-tea.html">Discover</a>
-          </li>
-          <li>
-            <strong>YSL Love Postcard</strong> · Inspired by Saint Laurent’s “LOVE” cartes.
-            <span>Beginning in 1970, Yves Saint Laurent created annual LOVE cards in collage, drawing, and gouache for friends, collaborators, and clients. Many were born in Morocco, alongside inspirations from Braque, Cocteau, Warhol, and Matisse. A bright echo of that tradition.</span>
-            <a href="https://museeyslparis.com/en/biography/naissance-des-love">Discover</a>
-          </li>
-          <li>
-            <strong>Petites attentions</strong> · Little gifts chosen with care.
-            <span>Small surprises to carry a bit of the night home.</span>
-          </li>
-        </ul>
-      </div>
-
-      <p class="section-label">If you wondered what we served</p>
-      <p>The table moved through roasted beetroot and greens, sumac onions, Zaalouk, tajines of chicken and légumes, Harira, pastilla poulet, Moroccan and French baguettes, and sweet endings of cookies, Sellou, cannelés, orange confit cake, and Bûche de Noël.</p>
-
-      <div class="center" style="margin-top:18px;">
-        <a class="menu-link" href="https://hiveraumaroc.com/menu.html">See the full menu</a>
-      </div>
-
-      <p class="closing center">Avec gratitude et affection · Hiver au Maroc</p>
-      <p class="center" style="color:rgba(193,181,161,0.7); font-size:12px; letter-spacing:0.06em; margin-top:16px;">Hiver au Maroc · Une soirée privée · © 2025</p>
+    <p class="section-label">In your gift bag</p>
+    <div class="gift-box">
+      <ul class="gift-list">
+        <li>
+          <strong>Les Sens de Marrakech</strong> · Savon délicat, crafted in Marrakech with local artisans.
+          <span>Created in 2003 by Céline Musquar Seguin to offer authentic Moroccan products while honoring local artisans. No deceptive packaging, just Moroccan craftsmanship with natural, safe ingredients and a commitment to ethical, truthful savoir-faire.</span>
+          <a href="https://www.lessensdemarrakech.fr/en/">Discover</a>
+        </li>
+        <li>
+          <strong>Tesori d’Oriente</strong> · Hammam Shower Cream with argan oil.
+          <span>An Italian house born to transform small daily gestures into rituals of pure pleasure. This Oriental-inspired aromatic shower cream with argan oil gently cleanses and deeply nourishes, leaving skin soft, silky, and wrapped in a warm, unmistakable fragrance. A sensory treat that renews body and mind, like a journey through golden dunes.</span>
+          <a href="https://www.tesoridoriente.com/en/shower-cream/hammam">Discover</a>
+        </li>
+        <li>
+          <strong>Palais des Thés</strong> · Thé vert à la menthe marocaine.
+          <span>Founded in 1986 by François-Xavier Delmas, this maison de thé brought a fresh voice to a long-established world. Green tea with sweet mint leaves, the ultimate Moroccan mint tea and refined gesture of hospitality across the Arab world.</span>
+          <a href="https://us.palaisdesthes.com/en_us/organic-mint-tea.html">Discover</a>
+        </li>
+        <li>
+          <strong>YSL Love Postcard</strong> · Inspired by Saint Laurent’s “LOVE” cartes.
+          <span>Beginning in 1970, Yves Saint Laurent created annual LOVE cards in collage, drawing, and gouache for friends, collaborators, and clients. Many were born in Morocco, alongside inspirations from Braque, Cocteau, Warhol, and Matisse. A bright echo of that tradition.</span>
+          <a href="https://museeyslparis.com/en/biography/naissance-des-love">Discover</a>
+        </li>
+        <li>
+          <strong>Petites attentions</strong> · Little gifts chosen with care.
+          <span>Small surprises to carry a bit of the night home.</span>
+        </li>
+      </ul>
     </div>
+
+    <p class="section-label">If you wondered what we served</p>
+    <p>The table moved through roasted beetroot and greens, sumac onions, Zaalouk, tajines of chicken and légumes, Harira, pastilla poulet, Moroccan and French baguettes, and sweet endings of cookies, Sellou, cannelés, orange confit cake, and Bûche de Noël.</p>
+
+    <div class="center" style="margin-top:18px;">
+      <a class="menu-link" href="https://hiveraumaroc.com/menu.html">See the full menu</a>
+    </div>
+
+    <p class="closing center">Avec gratitude et affection · Hiver au Maroc</p>
+    <p class="center" style="color:rgba(193,181,161,0.7); font-size:12px; letter-spacing:0.06em; margin-top:16px;">Hiver au Maroc · Une soirée privée · © 2025</p>
   </main>
 </body>
 </html>
