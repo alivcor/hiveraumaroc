@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hiver au Maroc · Food Labels</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #f4eee3;
+      --muted: #d6c7af;
+      --border: #c5ad8a;
+      --paper: #120c0a;
+      --card: #1c1411;
+    }
+    @page {
+      size: 8.5in 11in;
+      margin: 16mm;
+    }
+    html, body {
+      margin: 0;
+      background: var(--paper) !important;
+      color: var(--ink);
+      font-family: 'EB Garamond', 'Times New Roman', serif;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page {
+      background: var(--paper);
+      min-height: 100vh;
+      padding: 12px;
+    }
+    .sheet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      padding: 14px;
+      width: 100%;
+      max-width: calc(8.5in - 32mm);
+      margin: 0 auto;
+      background: var(--paper);
+    }
+    .label {
+      border: 1px solid rgba(197,173,138,0.55);
+      border-radius: 10px;
+      background: var(--card);
+      padding: 14px 12px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      break-inside: avoid;
+    }
+    .label-title {
+      font-size: 17px;
+      margin: 0 0 4px;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .label-tags {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin: 0 0 8px;
+    }
+    .label-desc {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.4;
+      color: #e6dcc9;
+    }
+    @media print {
+      html, body { background: var(--paper) !important; }
+      .page { background: var(--paper) !important; padding: 8px; }
+      .sheet { gap: 10px; padding: 0; background: var(--paper); }
+      .label { box-shadow: none; background: var(--card); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+  <main class="sheet">
+    <!-- Salads & Bites -->
+    <div class="label">
+      <div class="label-title">Roasted Carrots</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Caramelized carrots with warm spices.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Roasted Beetroot &amp; Greens</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Earthy roasted beets with bright, fresh greens.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Red Cabbage Pickle</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Crunchy, tangy pickled cabbage.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Roasted Cauliflower</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Charred florets with lemon, cumin, and a whisper of paprika.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Sumac Onions</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Sharp onions lightly marinated with sumac and lemon.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Roasted Eggplant</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Soft roasted aubergine with olive oil, garlic, and sea salt.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Zaalouk</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Smoky roasted eggplant and tomato dip with garlic and paprika.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Matboukha</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Slow-cooked tomato and pepper relish with garlic and warm spices.</p>
+    </div>
+
+    <!-- Plats -->
+    <div class="label">
+      <div class="label-title">Tajine de Poulet</div>
+      <div class="label-tags">GF · DF</div>
+      <p class="label-desc">Slow-braised chicken with warm spices, olives, and preserved lemon.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Tajine aux Légumes</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Fragrant vegetable tagine with cumin, paprika, and preserved lemon.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Harira Soup</div>
+      <div class="label-tags">🌱 GF · DF</div>
+      <p class="label-desc">Tomato–lentil soup with herbs and warm spices.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Pastilla Traditionnelle (Poulet)</div>
+      <p class="label-desc">Brick pastry with spiced chicken, almonds, coriander, sweet onion.</p>
+    </div>
+
+    <!-- Pains -->
+    <div class="label">
+      <div class="label-title">Baguette Marocaine</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Softer Moroccan baguette with a tender crumb.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Baguette Française</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Classic French baguette, light interior, crunchy crust.</p>
+    </div>
+
+    <!-- Desserts -->
+    <div class="label">
+      <div class="label-title">Assorted Moroccan Cookies</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Gazelle horns, Fekkas, Mhancha, Ghriyba, Briwat, Baklava, Chebakia.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Moroccan Sellou</div>
+      <div class="label-tags">V · GF</div>
+      <p class="label-desc">Nutty toasted sesame sweet for celebrations.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Cannelés Bordelais</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Caramelized crust with a custard heart.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Gâteau à l’Orange Confite</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Citrus-scented cake with candied orange.</p>
+    </div>
+    <div class="label">
+      <div class="label-title">Bûche de Noël</div>
+      <div class="label-tags">V</div>
+      <p class="label-desc">Yule log with chocolate and spice.</p>
+    </div>
+  </main>
+  </div>
+</body>
+</html>
